@@ -1,16 +1,22 @@
-const teste = 'hello world'//uma constante para fazer os testes
+const teste = 'gosto de açai'//uma constante para fazer os testes
+
+function reverseString(str){
+    if(typeof str !== 'string'){
+    return 'não foi enviada uma string'
+}
+    return str.split('').reverse().join('')
+}
 
 function reverseWordsInSentence(str){
-    if(typeof str === 'string'){
-        let  dividido = str.split(' ')
-        let resp = []
-        dividido.forEach(palavra => {
-        resp.push(palavra.split('').reverse().join(''))
-        });
-        let rResp = resp.join(' ')
-        return rResp;
-    }else{
+    if(typeof str !== 'string'){
         return 'não foi enviada uma string'
     }
+    resp = []
+    let palavra = str.split(' ')
+    palavra.forEach(word => {
+        resp += reverseString(word)
+        resp += ' '
+    });
+    return resp.trim();
 }
 console.log(reverseWordsInSentence(teste))
