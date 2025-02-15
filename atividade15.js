@@ -11,7 +11,7 @@ function removeDuplicates(arr){
     return resp;
 }
 function sortUniqueNumbers(nums){
-    if(!Array.isArray(nums)||nums==0){
+    if(!Array.isArray(nums)||nums.length===0){
         return 'valores nao encontrados'
     }
     let resp =[]

@@ -19,11 +19,12 @@ function drawEvenNumberTriangle(trr){
     if(typeof trr !== 'number'||trr===0){
         return 'Valora não encontrado!'
     }
-    par = getEvenNumbers(Math.floor(trr / 2))
-    semiDraw = drawTriangle(trr)
-    for (let i = 0; i<=par.length; i++){
-        semiDraw[i] = semiDraw[i].replaceAll('*', par[i].toString())
-    }
-    return semiDraw
+    let par = getEvenNumbers(Math.floor(trr / 2))
+    let semiDraw = drawTriangle(trr)
+    let i = 0
+    semiDraw = semiDraw.map((line) => {
+        return line.replace(/\*/g, () => par[i++].toString())
+    });
+    return semiDraw.join('\n')
 }
 console.log(drawEvenNumberTriangle(9))
