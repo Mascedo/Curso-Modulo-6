@@ -16,15 +16,16 @@ function drawTriangle(tr) {
      return tri;
 }
 function drawEvenNumberTriangle(trr){
-    if(typeof trr !== 'number'||trr===0){
+    if(typeof trr !== 'number'||trr.length===0){
         return 'Valora não encontrado!'
     }
-    let par = getEvenNumbers(Math.floor(trr / 2))
+    let par = getEvenNumbers(trr*2)
     let semiDraw = drawTriangle(trr)
-    let i = 0
-    semiDraw = semiDraw.map((line) => {
-        return line.replace(/\*/g, () => par[i++].toString())
-    });
+    for (let i = 0; i<= Math.floor(trr); i++){
+        if (i < par.length) {
+            semiDraw[i] = par[i].toString().repeat(semiDraw[i].length)
+        }
+    }
     return semiDraw.join('\n')
 }
 console.log(drawEvenNumberTriangle(9))
