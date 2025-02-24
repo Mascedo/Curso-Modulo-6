@@ -20,4 +20,5 @@ function reverseWordsInSentence(senteça){
     });
     return resp.trim();
 }
-console.log(reverseWordsInSentence(teste))
+let palavras = prompt('Escreva uma frase para inverter: ')
+console.log((reverseWordsInSentence(palavras)))

@@ -10,10 +10,12 @@ function sumOfUniqueEvenNumbers(arr){
     total = 0
     arr.forEach(num => {
         if(num%2==0&&!par.includes(num)){//adiciona somente se for para e nao ja estiver na lista
-            par.push(num)//adiciona ao array par
+            par.push(Number(num))//adiciona ao array par
         }
     });
     par.forEach(num => total += num);//soma todos os numero do array par
     return total;
 }
-console.log(sumOfUniqueEvenNumbers(teste))
+let lista = prompt('Escreva uma lista de numeros divididos por "," para encontrar os numeros par unicos: ')
+lista = lista.split(',')
+console.log((sumOfUniqueEvenNumbers(lista)))

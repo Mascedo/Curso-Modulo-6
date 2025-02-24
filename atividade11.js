@@ -1,6 +1,6 @@
 const prompt = require('prompt-sync')();
 function encryptSentenceWithCaesarCipher(str,shift){
-    if(typeof str !== 'string' || typeof shift !== 'number' || str === '' || shift === 0){
+    if(typeof str !== 'string' || !Number(shift) || str === '' || shift === 0){//verifica os valores
         return 'valores nao encontrados'
     }
     let resp = ''
@@ -20,4 +20,6 @@ function encryptSentenceWithCaesarCipher(str,shift){
  });
  return resp;
 }
-console.log(encryptSentenceWithCaesarCipher("hello world", 3))
+let palavra = prompt('Escreva uma frase para usar cifra de cesar: ')
+let shift = Number(prompt('espaçamento numeros: '))
+console.log((encryptSentenceWithCaesarCipher(palavra,shift)))

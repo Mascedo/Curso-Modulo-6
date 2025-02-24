@@ -16,7 +16,13 @@ function sortUniqueNumbers(nums){
         return 'valores nao encontrados'
     }
     let resp =[]
+    nums = nums.filter(numero => !isNaN(numero))
     resp += removeDuplicates(nums.sort())//soma na resposta o valor e ordena
+    if(resp.trim().length === 0){
+        return 'Valores invalidos'
+    }
     return resp;
 }
-console.log(sortUniqueNumbers(teste))
+let lista = prompt('Escreva uma lista de numeros divididos por "," para sortear os numeros unicos: ')
+lista = lista.split(',')
+console.log((sortUniqueNumbers(lista)))

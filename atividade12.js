@@ -1,5 +1,4 @@
 const prompt = require('prompt-sync')();
-const teste = [1,2,2,3,4,5,6,7,8,7,7,5,3,'dasdsa','sdaa','dasdsa']//uma constante para fazer os testes
 
 function removeDuplicates(arr){
     if(!Array.isArray(arr)||arr.length===0){//verificador 
@@ -14,4 +13,6 @@ function removeDuplicates(arr){
     });
     return resp;
 }
-console.log(removeDuplicates(teste))
+let lista = prompt('Escreva uma lista com itens divididos por "," para retirar valores repetidos: ')
+lista = lista.split(',')
+console.log((removeDuplicates(lista)))
