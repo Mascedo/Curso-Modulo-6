@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')();
 const teste = 'hello world'//uma constante para fazer os testes
 
 function removeDuplicates(arr){
@@ -22,11 +23,11 @@ function countVowels(str){
 }
 
 function removeDuplicatesAndCountVowels(str){
-    if(typeof str !== 'string'){
+    if(typeof str !== 'string'){//verfica se nao é string
         return 'valor enviado não é string'
     }
-    rDup = removeDuplicates(str.split(''))
-    cVow = countVowels(rDup.join(''))
-    return cVow;
+    removerDuplicadas = removeDuplicates(str.split(''))//remove as duplicadas da frase
+    contarVogais = countVowels(rDup.join(''))//conta as vogais
+    return contarVogais;
 }
 console.log(removeDuplicatesAndCountVowels(teste))
