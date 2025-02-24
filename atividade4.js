@@ -1,5 +1,4 @@
 const prompt = require('prompt-sync')();
-const teste = [1,2,2,3,4,5,6,7,8,7,7,5,3,'dsf','dsf']//uma constante para fazer os testes
 
 function getUniqueValues(arr){
     resposta = []
@@ -14,5 +13,6 @@ function getUniqueValues(arr){
     return 'array não foi encontrado ou sem valor';// se nao for usavel
 }
 }
-
-console.log(getUniqueValues(teste))
+let lista = prompt('Escreva uma lista com itens divididos por "," para retirar valores repetidos: ')
+lista = lista.split(',')
+console.log((getUniqueValues(lista)))

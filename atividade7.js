@@ -1,17 +1,21 @@
 const prompt = require('prompt-sync')();
-const teste = [1,2,2,3,4,5,6,7,8,7,7,5,3,'dasdsa','sdaa']//uma constante para fazer os testes
 
 function getEvenNumbers(arr){
     if(!Array.isArray(arr)||arr.length===0){
         return 'array não foi encontrado ou sem valor'
     }
     arr = arr.filter(str => !isNaN(str))
-    par = []// array para armezenar numeros par
+    let par = []// array para armezenar numeros par
     arr.forEach(num => {
-        if(num%2==0){ //caucula se é par
+        if(num%2===0){ //caucula se é par
             par.push(num)
         }
     });
+    if(par.length===0){// verifica se nao o array esta preenchido
+        return 'sem valor util ou  sem numeros impar'
+    }
     return par;
 }
-console.log(getEvenNumbers(teste))
+let lista = prompt('Escreva uma lista de numeros divididos por "," para encontrar os numeros par: ')+','//esta virgula é para impedir de o usuario nao colocar um unico item sem virgula e da erro
+lista = lista.split(',')
+console.log((getEvenNumbers(lista))) 

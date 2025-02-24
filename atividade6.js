@@ -1,5 +1,4 @@
 const prompt = require('prompt-sync')();
-const teste = [1,2,2,3,4,5,6,7,8,7,7,5,3,'dasdsa','sdaa']//uma constante para fazer os testes
 
 function getOddNumbers(arr){
     if(!Array.isArray(arr)||arr.length===0){// verifica se nao é array e manda mensagem
@@ -12,6 +11,11 @@ function getOddNumbers(arr){
             impar.push(num)
         }
     });
+    if(impar.length===0){// verifica se nao o array esta preenchido
+        return 'sem valor util ou  sem numeros impar'
+    }
     return impar;
 }
-console.log(getOddNumbers(teste))
+let lista = prompt('Escreva uma lista de numeros divididos por "," para encontrar os numeros impar: ')+','//esta virgula é para impedir de o usuario nao colocar um unico item sem virgula e da erro
+lista = lista.split(',')
+console.log((getOddNumbers(lista))) 

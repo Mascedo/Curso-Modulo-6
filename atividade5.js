@@ -14,5 +14,5 @@ if(typeof num == 'number'&&num>2){//verifica se é numero e se é maior que dois
 }
 return true;
 }
-
-console.log(isPrime(teste))
+let numero = Number(prompt('Escreva uma numero para verificar se é primo: '))
+console.log((isPrime(numero))) 
